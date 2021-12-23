@@ -1,7 +1,7 @@
 from myapp.models import Dreamreal
 
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 import datetime
 
 
@@ -18,6 +18,9 @@ def viewArticle(request, articleId):
 def viewArticles(request, month, year):
    text = "Displaying articles of : %s/%s"%(year, month)
    return HttpResponse(text)
+
+def redirectTest(request):
+   return redirect("https://www.djangoproject.com")
 
 def crudops(request):
 	#Creating an entry
